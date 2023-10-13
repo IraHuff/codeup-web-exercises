@@ -8,7 +8,7 @@ let lm = prompt('how many days are you renting little mermaid?');
 let bb = prompt('how many days are you renting brother bear?');
 let herc = prompt('how many days are you renting hercules?');
 let cpd = prompt('what is the cost per day per movie?');
-alert('total cost will be ' + ((lm * cpd) + (bb * cpd) + (herc * cpd))+ ' bucks.');
+alert('total cost will be ' + ((lm * cpd) + (bb * cpd) + (herc * cpd)) + ' bucks.');
 //exorcise 3 part two
 let google = prompt('what is your hourly pay at google?');
 let amazon = prompt('what is your hourly pay at amazon?');
