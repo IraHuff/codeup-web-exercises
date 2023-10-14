@@ -9,7 +9,7 @@
  * > sayHello("codeup") // returns "Hello, codeup!"
  */
 function sayHello(name) {
-    return `Hello, ${name}`;
+    return console.log(`Hello, ${name}`);
 }
 /**
  * TODO:
@@ -27,8 +27,7 @@ console.log(helloMessage);
  * console.
  */
 let myName = 'Ira';
-console.log(sayHello(myName));
-
+sayHello(myName);
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
 const random = Math.floor((Math.random() * 3) + 1);
@@ -67,7 +66,7 @@ console.log(isTwo(random));
  * > calculateTip(0.15, 33.42) // returns 5.013
  */
 function calculateTip(tip, bill){
-    return tip * bill;
+    return (parseFloat(tip) * parseFloat(bill)).toFixed(3);
 }
 /**
  * TODO:
@@ -75,9 +74,9 @@ function calculateTip(tip, bill){
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-let percent = parseFloat(prompt('What percentage do you wish to tip? example .1'));
-let cost = parseFloat(prompt('How much is the bill?'));
-alert(calculateTip(percent, cost).toFixed(2) + ' is what you should tip');
+let percent = prompt('What percentage do you wish to tip? example .1');
+let cost = prompt('How much is the bill?');
+alert(calculateTip(percent, cost) + ' is what you should tip');
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
@@ -93,7 +92,6 @@ alert(calculateTip(percent, cost).toFixed(2) + ' is what you should tip');
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
 function applyDiscount(original, discount){
-    return parseFloat(original) - (parseFloat(original) * parseFloat(discount));
+    return (parseFloat(original) - (parseFloat(original) * parseFloat(discount))).toFixed(4);
 }
-
-console.log(applyDiscount('99.95', .05).toFixed(2));
+console.log(applyDiscount('99.95', .05));
