@@ -75,9 +75,9 @@ function calculateTip(tip, bill){
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
  */
-let percent = prompt('What percentage do you wish to tip? example .1');
-let cost = prompt('How much is the bill?');
-alert(calculateTip(percent, cost) + ' is what you should tip');
+let percent = parseFloat(prompt('What percentage do you wish to tip? example .1'));
+let cost = parseFloat(prompt('How much is the bill?'));
+alert(parseFloat(calculateTip(percent, cost)).toFixed(2) + ' is what you should tip');
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
@@ -96,4 +96,4 @@ function applyDiscount(original, discount){
     return original - (original * discount);
 }
 
-console.log(applyDiscount(99.95, .05));
+console.log(applyDiscount(99.95, .05).toFixed(2));
