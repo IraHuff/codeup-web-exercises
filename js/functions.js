@@ -27,7 +27,7 @@ console.log(helloMessage);
  * console.
  */
 let myName = 'Ira';
-sayHello(myName);
+console.log(sayHello(myName));
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
 const random = Math.floor((Math.random() * 3) + 1);
