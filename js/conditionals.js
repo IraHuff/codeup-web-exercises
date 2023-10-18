@@ -156,6 +156,11 @@ alert(`Your lucky number today was ${luckyNumber}.\nYour bill today was $${parse
                 let sign = n1 < 0 ? 'negative' : 'positive';
                 if (isNaN(n1) === true){
                     return alert(`That was not a number try again`)}
+                elseif(n1 === 0){
+                    alert('zero is neither even or odd')
+                    alert('zero is neither positive or negative')
+                    alert('Adding one hundred to zero is one hundred')
+            }
                 else{
                     alert(`${n1} is ${oddOrEven}`)
                     alert(`${n1} plus 100 is ${plus100}`)
