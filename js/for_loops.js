@@ -1,3 +1,4 @@
+"use strict"
 function showMultiplicationTable(x){
     for (let i = 1; i < 11; i++) {
         let output = x * i
@@ -25,7 +26,7 @@ function pyramid(){
 //pyramid()
 
 function countdown(){
-    for (i = 100; i > 0; i -= 5){
+    for (let i = 100; i > 0; i -= 5){
         console.log(i)
     }
 }

@@ -1,4 +1,5 @@
- let chosen = null
+ "use strict"
+let chosen = null
 while (chosen === null) {
      chosen = parseFloat(prompt('please input an odd number between 1 and 50'))
     if (isNaN(chosen) == true) chosen = null
