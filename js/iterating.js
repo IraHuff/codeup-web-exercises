@@ -30,6 +30,10 @@
     for(let i = 0; i < names.length; i++){
         console.log(names[i] + ' for')
     }
+    for (let name of names){
+        console.log(name)
+    }
+
     /**
      * TODO:
      * Refactor your above code to use a `forEach` loop
