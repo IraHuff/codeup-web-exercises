@@ -9,7 +9,7 @@ function showMultiplicationTable(x){
 //showMultiplicationTable(7)
 function randomOddOrEven(){
     for (let i = 1; i < 11; i++){
-let random = Math.floor(Math.random() * 180) + 20;
+let random = Math.floor(Math.random() * 181) + 20;
 let oddOrEven = (random % 2 === 0) ? 'is even' : 'is odd';
 console.log(`${random} ${oddOrEven}`)
 }
