@@ -44,12 +44,20 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
-
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+    shoppers.forEach(shopper =>{
+       //console.log(shopper)
+        //console.log(shopper.name)
+        if (shopper.amount <=200) console.log(`${shopper.name} has a bill less than $200 so no discount today and owes $${(shopper.amount).toFixed(2)}`)
+        else {
+            let discount = (shopper.amount - (shopper.amount * .12)).toFixed(2)
+            console.log(`${shopper.name} has a bill of ${shopper.amount} receives a 12% discount and after discount owes $${discount}`)
+        }
+        })
     /** TODO:
      * Create an array of objects that represent books and store it in a
      * variable named `books`. Each object should have a title and an author
@@ -62,7 +70,13 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
-
+let books = [
+        {title: "The Belgariad", author: {firstName: "David", lastName: "Eddings"}},
+        {title: "So You Want To Be A Wizard", author: {firstName: "Diane", lastName: "Duane"}},
+        {title: "Lady Slings the Booze", author: {firstName: "Spider", lastName: "Robinson"}},
+        {title: "Powers That Be", author: {firstName: "Anne", lastName: "McCaffrey"}},
+        {title: "The Stainless Steel Rat", author: {firstName: "Harry", lastName: "Harrison"}},
+    ]
     /**
      * TODO:
      * Loop through the books array and output the following information about
@@ -87,7 +101,10 @@
      *      ---
      *      ...
      */
-
+    books.forEach((book, num) =>{
+        let writer = book.author.firstName + " " + book.author.lastName
+        console.log(`Book # ${num +1} \nTitle: ${book.title} \nAuthor: ${writer}`)
+    })
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -98,5 +115,16 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-
+function createBook (bTitle, fName, lName){
+    let newBook = {title: bTitle, author: {firstName: fName, lastName: lName}}
+        books.push(newBook)
+    }
+    createBook("The Hobbit", "J. R. R.", "Tolkin")
+    function showBookInfo(object) {
+        object.forEach((book, num) =>{
+            let writer = book.author.firstName + " " + book.author.lastName
+            console.log(`Book # ${num +1} \nTitle: ${book.title} \nAuthor: ${writer}`)
+        })
+    }
+    showBookInfo(books)
 })();
