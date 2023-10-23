@@ -120,6 +120,7 @@ function createBook (bTitle, fName, lName){
         books.push(newBook)
     }
     createBook("The Hobbit", "J. R. R.", "Tolkin")
+    createBook('Storm Front', 'Jim', 'Butcher')
     function showBookInfo(object) {
         object.forEach((book, num) =>{
             let writer = book.author.firstName + " " + book.author.lastName
