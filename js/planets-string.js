@@ -31,4 +31,7 @@
     let list = ["<ul>",planetsArray.map(function(str){
         return '\t<li>'+str+'</li>'}).join('\n'),"</ul>"].join("\n");//thank you stack overflow
     console.log(list);
+
+    let list2 = `<ul><li>${planetsArray.join("</li><li>")}</li><ul>`
+    console.log(list2)
 })();
