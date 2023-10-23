@@ -25,6 +25,8 @@
      */
     let planetsString2 = planetsArray.join('<br>')
     console.log(planetsString2)
+//when rendering to html
+
 
     let list = ["<ul>",planetsArray.map(function(str){
         return '\t<li>'+str+'</li>'}).join('\n'),"</ul>"].join("\n");
