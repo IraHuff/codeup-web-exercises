@@ -8,7 +8,7 @@
         getArea: function () {
             // TODO: complete this method
             // hint: area = pi * radius^2
-            let area = Math.PI * (this.radius ** 2)
+            let area = Math.PI * Math.pow(this.radius, 2)
             return area; // TODO: return the proper value
         },
 
@@ -16,7 +16,7 @@
             // TODO: complete this method.
           let x = 1
             if (doRounding === true){
-                 x = this.getArea().toFixed(0);
+                 x = Math.round(this.getArea());
             }else x = this.getArea()
             // If doRounding is true, round the result to the nearest integer.
             // Otherwise, output the complete value
