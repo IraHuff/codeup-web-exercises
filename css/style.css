@@ -1,0 +1,65 @@
+body {
+    background-color: #b3b3b3;
+    font-family: 'Comic Neue', system-ui;
+}
+main{
+    background-image: url(/img/dont-be-evil.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.fancy_header {
+    color: purple;
+    text-align: center;
+}
+.underline {
+    text-decoration: underline;
+}
+ul {
+    list-style: square outside;
+}
+h3 {
+    text-align: center;
+}
+table {
+    table-layout: fixed;
+    margin: 0 200px;
+    width: 75%;
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+th:nth-child(1){
+    width: 40%;
+}
+th:nth-child(2){
+    width: 20%;
+}
+th:nth-child(3){
+    width: 40%;
+}
+td{
+    text-align: center;
+    padding: 10px;
+}
+th{
+    padding: 10px;
+    color: mediumvioletred;
+}
+tr:nth-child(3){
+    background-color: darkred;
+    color: navajowhite;
+}
+a:link{
+    color: purple;
+}
+a:hover{
+    color: aqua;
+}
+a:visited{
+    color: lightseagreen;
+}
+a:active{
+    color: mediumpurple;
+}
+footer{
+    text-align: right;
+}
