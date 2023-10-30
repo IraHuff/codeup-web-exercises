@@ -79,7 +79,7 @@ button.btn.btn-login {
     width: 50px;
     border-radius: 50%;
     position: relative;
-    top: -75px;
+    top: -60px;
     right: -250px;
     border: 1px solid lightgrey;
 }
@@ -88,8 +88,8 @@ button.btn.btn-login {
     height: 20px;
     width: 20px;
     position: relative;
-    top: -41px;
-    right: -251px;
+    top: 12px;
+    right: -15px;
     z-index: 2;
 }
 .footer-top{
