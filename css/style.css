@@ -22,7 +22,7 @@ h3 {
 }
 table {
     table-layout: fixed;
-    margin: 0 200px;
+    margin: 0 auto;
     width: 75%;
     border-collapse: collapse;
     border: 2px solid black;
