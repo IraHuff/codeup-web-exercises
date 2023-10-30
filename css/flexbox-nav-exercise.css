@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+nav{
+    background: #c3c3c3;
+    padding: 0;
+    margin: 0;
+}
+.logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3em;
+    padding: .2em 0;
+}
+ul {
+    font-family: 'Work Sans', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+}
+a{
+    display: inline-block;
+    text-decoration: none   ;
+    color: black;
+    padding: 1em;
+}
+
+a:visited{
+    color: black;
+}
+a:hover{
+    color: blue;
+}
+.center{
+    margin: 0 29% 0 20%;
+}
+i {
+    color: black
+}
+i:hover{
+    color: blue;
+}
