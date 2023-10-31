@@ -12,19 +12,19 @@ padding: 5px 1em;
     border-radius: 5px;
 }
 .message-info{
-background-color: #6495ed80;
-    color: royalblue;
+background-color: #c2d4ff90;
+    color: #3d3493;
 }
 .message-success{
-background-color: #90ee9080;
-    color: green;
+background-color: #c5f2d290;
+    color: #216543;
 }
 .message-warning{
-background-color: #ffff0080;
-    color: yellowgreen;
+background-color: #fcfcbd90;
+    color: #888e23;
 }
 .message-error{
-    background-color: #ff000080;
-    color: red;
+    background-color: #f8c7cd90;
+    color: #84293f;
 
 }
