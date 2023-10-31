@@ -13,8 +13,9 @@ body, html {
 }
 .message{
     width: 50%;
-padding: 10px 1em;
+    padding: 10px 1em;
     margin: 10px auto;
+    border 1px solid #c3c3c360;
     border-radius: 5px;
     font-weight: bold;
 }

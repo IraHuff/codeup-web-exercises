@@ -60,7 +60,7 @@ fieldset {
     color: white;
     font-weight: bold;
     /* The border of this element should be 1px, and its color should be light grey */
-    border: 1px solid lightgrey;
+    border: 2px solid grey;
     background-color: #0fb784;
 }
 
@@ -72,7 +72,7 @@ fieldset {
     /* You'll need to use the `calc` function to make the width of this element match the width of the button */
     /* See the example at: https://developer.mozilla.org/en-US/docs/Web/CSS/calc */
     /* HINT: Examples are available at: https://glitch.com/~input-button-width */
-    width: calc(100% - 5px);
+    width: calc(100% - 4px);
 }
 
 
