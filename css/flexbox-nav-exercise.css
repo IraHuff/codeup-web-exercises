@@ -8,11 +8,13 @@ nav{
     background: #c3c3c3;
     padding: 0;
     margin: 0;
+    font-weight: bold;
 }
 .logo {
     font-family: 'Montserrat', sans-serif;
     font-size: 3em;
-    padding: .2em 0;
+    padding: .2em 0 .2em 0;
+    font-weight: normal;
 }
 ul {
     font-family: 'Work Sans', sans-serif;
@@ -28,7 +30,7 @@ a{
     display: inline-block;
     text-decoration: none   ;
     color: black;
-    padding: 1em;
+    padding: .5em;
 }
 
 a:visited{
@@ -38,11 +40,15 @@ a:hover{
     color: blue;
 }
 .center{
-    margin: 0 29% 0 20%;
+    flex-grow: 1;
+    text-align: center;
 }
 i {
     color: black
 }
 i:hover{
     color: blue;
+}
+.right{
+    margin-right: 1em;
 }
