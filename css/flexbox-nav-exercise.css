@@ -43,12 +43,9 @@ a:hover{
     flex-grow: 1;
     text-align: center;
 }
-i {
-    color: black
-}
-i:hover{
-    color: blue;
+.left{
+    padding-left: 1em;
 }
 .right{
-    margin-right: 1em;
+    padding-right: 1em;
 }
