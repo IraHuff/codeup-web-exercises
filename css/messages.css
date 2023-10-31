@@ -1,3 +1,9 @@
+:root{
+    --bg-info: #c2d4ff90;
+    --text-info: #3d3493;
+    --bg-success: #c5f2d290;
+    --text-success: #216543;
+}
 body, html {
     height: 100%;
     width: 100%;
@@ -12,12 +18,12 @@ padding: 5px 1em;
     border-radius: 5px;
 }
 .message-info{
-background-color: #c2d4ff90;
-    color: #3d3493;
+background-color: var(--bg-info);
+    color: var(--text-info);
 }
 .message-success{
-background-color: #c5f2d290;
-    color: #216543;
+background-color: var(--bg-success);
+    color: var(--text-success);
 }
 .message-warning{
 background-color: #fcfcbd90;
