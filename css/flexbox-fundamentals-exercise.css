@@ -34,13 +34,14 @@ h2, h3 {
     padding: 1em;
     margin: 0 auto;
     /* enter needed declarations here */
-
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
 }
 
 section {
     /* enter needed declarations here */
     display: flex;
-    margin: 1em 0;
 }
 
 section:nth-of-type(1) {

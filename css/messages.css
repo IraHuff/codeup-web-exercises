@@ -1,7 +1,7 @@
 :root{
-    --bg-info: #c2d4ff90;
+    --bg-info: #c2d4ffaa;
     --text-info: #3d3493;
-    --bg-success: #c5f2d290;
+    --bg-success: #c5f2d2aa;
     --text-success: #216543;
 }
 body, html {
@@ -13,9 +13,10 @@ body, html {
 }
 .message{
     width: 50%;
-padding: 5px 1em;
-    margin: 5px auto;
+padding: 10px 1em;
+    margin: 10px auto;
     border-radius: 5px;
+    font-weight: bold;
 }
 .message-info{
 background-color: var(--bg-info);
@@ -26,11 +27,12 @@ background-color: var(--bg-success);
     color: var(--text-success);
 }
 .message-warning{
-background-color: #fcfcbd90;
+background-color: #fcfcbdaa;
     color: #888e23;
 }
 .message-error{
-    background-color: #f8c7cd90;
+    background-color: #f8c7cdaa;
     color: #84293f;
+
 
 }
