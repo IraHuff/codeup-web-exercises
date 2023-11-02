@@ -1,0 +1,19 @@
+body{
+    background-color: #c3c3c3;
+}
+.jumbotron{
+    background-image: url("../img/pizza.png");
+    height: 346px;
+    background-size: cover;
+    flex-flow: column;
+    justify-content: center;
+}
+.title{
+    background-color: #efefefaa;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+}
+.formbg{
+    background-color: #c3c3c3;
+}
