@@ -3,9 +3,10 @@
 }
 body{
     margin: 0;
+    background-image: url("../img/fun.jpg");
 }
 nav{
-    background: #c3c3c3;
+    background: #534B52;
     padding: 0;
     margin: 0;
     font-weight: bold;
@@ -29,15 +30,15 @@ ul {
 a{
     display: inline-block;
     text-decoration: none   ;
-    color: black;
+    color: #E0DDCF;
     padding: .5em;
 }
 
 a:visited{
-    color: black;
+    color: #e0ddcf;
 }
 a:hover{
-    color: blue;
+    color: #474448;
 }
 .center{
     flex-grow: 1;
@@ -48,4 +49,19 @@ a:hover{
 }
 .right{
     padding-right: 1em;
+}
+.container{
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    color: #F1F0EA;
+    line-height: 2;
+}
+.flex{
+    width: 70dvh;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2D232Eaa;
 }
