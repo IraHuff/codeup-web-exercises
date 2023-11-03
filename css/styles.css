@@ -29,7 +29,7 @@ input {
     font-size: 15px;
 }
 
-input:placeholder {
+input::placeholder {
     color: #ABAFB3;
 }
 
@@ -87,7 +87,7 @@ button.btn.btn-login {
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 2;
+    z-index: 3;
     padding: 0;
     margin: -1em;
     line-height: 0;
@@ -97,6 +97,7 @@ button.btn.btn-login {
     position: absolute;
     bottom: 0;
     left: 0;
+    z-index: 1;
 }
 .footer-bottom{
     position: absolute;
