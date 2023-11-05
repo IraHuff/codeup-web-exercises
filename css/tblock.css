@@ -5,6 +5,9 @@ body{
 main h2{
     color: #a1cf6b;
 }
+main h3{
+    color: #d387ab;
+}
 ul{
     list-style: square;
 }
