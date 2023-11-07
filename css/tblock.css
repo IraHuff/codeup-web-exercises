@@ -1,13 +1,16 @@
-body{
+body {
     font-family: 'Comic Neue', sans-serif;
     /*background-color: #c2c2c2;*/
 }
-main h2{
+
+main h2 {
     color: #a1cf6b;
 }
-main h3{
+
+main h3 {
     color: #d387ab;
 }
-ul{
+
+ul {
     list-style: square;
 }

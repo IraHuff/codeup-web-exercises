@@ -1,12 +1,13 @@
 
-.jumbotron{
+.jumbotron {
     background-image: url("../img/pizza.png");
     height: 346px;
     background-size: cover;
     flex-flow: column;
     justify-content: center;
 }
-.title{
+
+.title {
     background-color: #efefefaa;
     font-weight: bold;
     font-size: 3em;
