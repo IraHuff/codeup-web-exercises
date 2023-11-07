@@ -37,6 +37,7 @@
     </div>
 </nav>
 <main class="container">
+    <form action="http://request-inspector.glitch.me/" method="POST">
 <div class="jumbotron d-none d-md-flex">
     <div class="title">
         Welcome to Pizza World
@@ -69,13 +70,13 @@
                     </div>
                         <ul class="list-group">
                             <li class="list-group-item">
-                                <input class="form-check-input ms-1" type="radio" name="crust" id="smallHand" checked>
+                                <input class="form-check-input ms-1" type="radio" name="crust" id="smallHand" value="smallHand" checked>
                                 <label class="form-check-label ms-2" for="smallHand">
                                     Small (10")
                                 </label>
                             </li>
                             <li class="list-group-item">
-                                <input class="form-check-input ms-1" type="radio" name="crust" id="mediumHand">
+                                <input class="form-check-input ms-1" type="radio" name="crust" id="mediumHand" value="medHand">
                                 <label class="form-check-label ms-2" for="mediumHand">
                                     Medium (12")
                                 </label>
@@ -91,13 +92,13 @@
                     </div>
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <input class="form-check-input ms-1" type="radio" name="crust" id="medThin">
+                            <input class="form-check-input ms-1" type="radio" name="crust" id="medThin" value="medThin">
                             <label class="form-check-label ms-2" for="medThin">
                                 Medium (12")
                             </label>
                         </li>
                         <li class="list-group-item">
-                            <input class="form-check-input ms-1" type="radio" name="crust" id="largeThin">
+                            <input class="form-check-input ms-1" type="radio" name="crust" id="largeThin" value="largeThin">
                             <label class="form-check-label ms-2" for="largeThin">
                                 Large (14")
                             </label>
@@ -119,7 +120,7 @@
                         How Much?
                     </div>
                     <div class="card-body border p-2">
-                        <select class="form-select" aria-label="how much cheese">
+                        <select class="form-select" aria-label="how much cheese" name="cheese">
                             <option value="light">Light</option>
                             <option value="normal" selected>Normal</option>
                             <option value="extra">Extra</option>
@@ -135,7 +136,7 @@
                         What Type?
                     </div>
                     <div class="card-body border p-2">
-                        <select class="form-select" aria-label="what type of sauce">
+                        <select class="form-select" aria-label="what type of sauce" name="sauceType">
                             <option value="tom">Tomato</option>
                             <option value="marinara">Marinara</option>
                             <option value="bbq">BBQ</option>
@@ -146,10 +147,10 @@
                         How Much?
                     </div>
                     <div class="card-body border p-2">
-                        <select class="form-select" aria-label="how much sauce">
-                            <option value="light">Light</option>
-                            <option value="normal" selected>Normal</option>
-                            <option value="extra">Extra</option>
+                        <select class="form-select" aria-label="how much sauce" name=sauceAmount>
+                            <option value="sauceLight">Light</option>
+                            <option value="sauceNormal" selected>Normal</option>
+                            <option value="sauceExtra">Extra</option>
                         </select>
                     </div>
                 </div>
@@ -172,31 +173,31 @@
                     </div>
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <input class="form-check-input ms-1" type="checkbox" value="pep" id="pep">
+                            <input class="form-check-input ms-1" type="checkbox" value="pep" id="pep" name="meat">
                             <label class="form-check-label ms-2" for="pep">
                                 Peperoni
                             </label>
                         </li>
                         <li class="list-group-item">
-                            <input class="form-check-input ms-1" type="checkbox" value="italian" id="italian">
+                            <input class="form-check-input ms-1" type="checkbox" value="italian" id="italian" name="meat">
                             <label class="form-check-label ms-2" for="italian">
                                 Italian Sausage
                             </label>
                         </li>
                         <li class="list-group-item">
-                            <input class="form-check-input ms-1" type="checkbox" value="beef" id="beef">
+                            <input class="form-check-input ms-1" type="checkbox" value="beef" id="beef" name="meat">
                             <label class="form-check-label ms-2" for="beef">
                                 Beef
                             </label>
                         </li>
                         <li class="list-group-item">
-                            <input class="form-check-input ms-1" type="checkbox" value="ham" id="ham">
+                            <input class="form-check-input ms-1" type="checkbox" value="ham" id="ham" name="meat">
                             <label class="form-check-label ms-2" for="ham">
                                 Ham
                             </label>
                         </li>
                         <li class="list-group-item">
-                            <input class="form-check-input ms-1" type="checkbox" value="steak" id="steak">
+                            <input class="form-check-input ms-1" type="checkbox" value="steak" id="steak" name="meat">
                             <label class="form-check-label ms-2" for="steak">
                                 Philly Steak
                             </label>
@@ -209,25 +210,25 @@
                     </div>
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <input class="form-check-input ms-1" type="checkbox" value="onion" id="onion">
+                            <input class="form-check-input ms-1" type="checkbox" value="onion" id="onion" name="veggies">
                             <label class="form-check-label ms-2" for="onion">
                                 Onion
                             </label>
                         </li>
                         <li class="list-group-item">
-                            <input class="form-check-input ms-1" type="checkbox" value="peppers" id="peppers">
+                            <input class="form-check-input ms-1" type="checkbox" value="peppers" id="peppers" name="veggies">
                             <label class="form-check-label ms-2" for="peppers">
                                 Bell Peppers
                             </label>
                         </li>
                         <li class="list-group-item">
-                            <input class="form-check-input ms-1" type="checkbox" value="mushrooms" id="mushrooms">
+                            <input class="form-check-input ms-1" type="checkbox" value="mushrooms" id="mushrooms" name="veggies">
                             <label class="form-check-label ms-2" for="mushrooms">
                                 Mushrooms
                             </label>
                         </li>
                         <li class="list-group-item">
-                            <input class="form-check-input ms-1" type="checkbox" value="olives" id="olives">
+                            <input class="form-check-input ms-1" type="checkbox" value="olives" id="olives" name="veggies">
                             <label class="form-check-label ms-2" for="olives">
                                 Black Olives
                             </label>
@@ -235,11 +236,12 @@
                     </ul>
                 </div>
                 <div class="card-footer d-flex justify-content-end">
-                    <button class="btn btn-primary">Checkout<i class="fa-solid fa-cart-shopping"></i></button>
+                    <button class="btn btn-primary" type="submit">Checkout<i class="fa-solid fa-cart-shopping"></i></button>
                 </div>
             </div>
         </div>
     </div>
+    </form>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script> function tab2(){
