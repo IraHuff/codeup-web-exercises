@@ -28,20 +28,20 @@
     let nextKey = code[codePosition];
     // console.log(key);
     // console.log(nextKey);
-    // console.log(code.length);
+    // console.log(codePosition);
     if (key === nextKey){
       codePosition++;
     }else if (codePosition == 10){
       activateCheats();
       codePosition = 0;
     }else codePosition = 0;
-  })
+  });
 let audio = new Audio('audio/fatality.mp3')
   function activateCheats() {
     document.body.style.backgroundColor = 'red';
     audio.play();
     document.h1.innerText = 'cheats activated';
-  }
+  };
 </script>
 </body>
 </html>

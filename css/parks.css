@@ -1,0 +1,32 @@
+.yellow {
+    background-color: yellow;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.blue {
+    color: blue;
+}
+.border {
+    border: 5px solid saddlebrown;
+    height: 220px;
+    width: 110px;
+}
+.flex {
+    display: flex;
+    justify-content: space-around;
+}
+.bg1{
+    background-image: url("../img/forest1.jpeg");
+    background-size: cover;
+}
+.bg2{
+     background-image: url("../img/forest2.jpeg");
+    background-size: cover;
+ }
+.bg3{
+      background-image: url("../img/forest3.jpeg");
+    background-size: cover;
+  }
