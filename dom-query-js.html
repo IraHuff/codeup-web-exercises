@@ -52,11 +52,29 @@
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         const subParagraphs = document.getElementsByClassName("sub-paragraph")[0];
-        console.log(subParagraphs.innerHTML)
+        // console.log(subParagraphs.innerHTML)
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
         subParagraphs.innerHTML="Mission Accomplished!"
 
+        mainHeader.addEventListener("click", () => mainHeader.style.backgroundColor = "lightgrey")
+
+        for (let list of listItems){
+            list.addEventListener('mouseenter',() =>{
+                list.style.color = 'red'
+            })
+        }
+        for (let list of listItems){
+            list.addEventListener('mouseleave',() =>{
+                list.style.color = 'black'
+            })
+        }
+       let paragraphs = document.getElementsByTagName('p')
+        for (let para of paragraphs) {
+            para.addEventListener('dblclick', () => {
+                para.style.fontSize = '18px'
+            })
+        }
 </script>
 </body>
 </html>
