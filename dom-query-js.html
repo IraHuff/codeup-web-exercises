@@ -24,30 +24,33 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
+<section style="display: flex; justify-content: space-around">
+    <button id="one">one</button><button id="two">two</button><button id="three">three</button><button id="four">four</button>
+</section>
 <script>
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
         const mainHeader = document.getElementById('main-header');
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerHTML="JavaScript is Cool";
+        function one(){mainHeader.innerHTML="JavaScript is Cool";}
         // TODO: Uncomment the next line and get the sub header element by id
         const subHeader = document.getElementById('sub-header');
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = "blue"
+        function two(){subHeader.style.color = "blue"}
         // TODO: Uncomment the next line and get all list items
         const listItems = document.getElementsByTagName('li') ;
         // console.log(listItems)
         // TODO: Set text color on every other list item to grey
-        for(let node of listItems){
+        function three(){for(let node of listItems){
             // console.log(node.dataset)
             if(node.dataset.dbid % 2==0) {
                 node.style.color = "grey"
             }else if(node.dataset.dbid == 1){
                 node.style.color = "blue"
             }
-        }
+        }}
         // TODO: Set text color of li with dbid = 1 to blue
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
@@ -55,7 +58,17 @@
         // console.log(subParagraphs.innerHTML)
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs.innerHTML="Mission Accomplished!"
+        function four(){subParagraphs.innerHTML="Mission Accomplished!"}
+
+        // let btn1 = document.getElementById('one')
+        // let btn2 = document.getElementById('two')
+        // let btn3 = document.getElementById('three')
+        // let btn4 = document.getElementById('four')
+
+        // btn1.addEventListener("click", one)
+        // btn2.addEventListener("click", two)
+        // btn3.addEventListener("click", three)
+        // btn4.addEventListener("click", four)
 
         mainHeader.addEventListener("click", () => mainHeader.style.backgroundColor = "lightgrey")
 
