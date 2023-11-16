@@ -28,7 +28,7 @@
             codePosition = 0;
         } else codePosition = 0;
     });
-    let audio = new Audio('audio/fatality.mp3')
+    let audio = new Audio('audio/emotional.mp3')
     function activateCheats() {
         document.body.style.backgroundColor = 'red';
         audio.play();
