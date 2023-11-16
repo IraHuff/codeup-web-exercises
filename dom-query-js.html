@@ -75,7 +75,7 @@
         for (let list of listItems){
             list.addEventListener('mouseenter',() =>{
                 list.style.color = 'red'
-            })
+            }, {once: true})
         }
         for (let list of listItems){
             list.addEventListener('mouseleave',() =>{
