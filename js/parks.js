@@ -39,7 +39,7 @@ for (let head of header) {
 }
 for (let item of listItem){
     item.addEventListener("click", () =>{
-        item.parentElement.classList.toggle("blue")
+        item.parentElement.firstElementChild.classList.toggle("blue")
     })
 }
 btn1.addEventListener("click", leftPic)
