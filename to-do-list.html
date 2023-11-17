@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>To Do List</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/to-do-list.css">
 </head>
 <body>
 <div class="container">
@@ -30,41 +35,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
-<script>
-let todo = document.getElementById('to-do-form');
-let user = document.getElementById('to-do');
-let list = document.getElementById('to-do-list');
-let btn1 = document.querySelector('.add')
-let index = 1
-function remove(){
-    this.parentElement.remove()
-}
-btn1.addEventListener('click', (e) => {
-    e.preventDefault()
-    let item = document.createElement('li');
-    let para = document.createElement('p')
-    let done = document.createElement('button')
-    let todo = document.createTextNode(user.value);
-    let btnDone = document.createTextNode('DONE')
-    let buttonDone = done.appendChild(btnDone)
-    if (user.value == ''){
-        alert('must have an item todo')
-    }else if (index >= 10){
-        alert('clear some items first')
-    }else {
-        list.appendChild(item)
-        item.setAttribute('class', "to-do-item list-group-item d-flex justify-content-between align-items-center")
-        item.appendChild(para)
-        para.setAttribute('class', "m=0")
-        para.appendChild(todo)
-        item.appendChild(done)
-        done.setAttribute('class', "btn btn-success")
-        done.setAttribute('id', `done-${index}`)
-        done.addEventListener('click', remove)
-        index++
-    }
-    })
-</script>
+<script src="js/to-do-list.js"></script>
 
 </body>
 </html>

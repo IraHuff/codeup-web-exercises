@@ -1,0 +1,13 @@
+body {
+    background-image: url("../img/to-do-list.jpg");
+    color: papayawhip;
+}
+p {
+    font-family: "Permanent Marker", sans-serif;
+    font-size: 30px;
+    background-color: slategray;
+    color: antiquewhite;
+}
+.list-group-item {
+    background-color: slategray;
+}
