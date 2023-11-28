@@ -64,7 +64,7 @@ const email = users.reduce((mail, address) => {
 console.log(email);
 
 //problem six
-const instructors = users.reduce((instructor, names) => instructor + names.name + ', ', 'Your instructors are: ')
+const instructors = users.reduce((instructor, names) => instructor + names.name + ', ', 'Your instructors are: ').replace(/,(?=[^,]*$)/,'.')
 console.log(instructors);
 
 //bonus
