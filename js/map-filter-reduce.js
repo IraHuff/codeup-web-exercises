@@ -54,13 +54,13 @@ let average = experience / users.length
 console.log(average);
 
 //problem 5
-const email = emails.reduce((mail, address) => {
-    if (address.length > mail.length) {
-       return address
-    }else {
+const email = users.reduce((mail, address) => {
+    if (address.email.length < mail.length) {
        return mail
+    }else {
+       return address.email
     }
-})
+}, '')
 console.log(email);
 
 //problem six
