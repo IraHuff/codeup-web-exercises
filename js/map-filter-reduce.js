@@ -41,11 +41,30 @@ const users = [
 // problem two
 const languages = users.filter(lang => lang.languages.length >= 3)
 console.log(languages);
+
 //problem three
 const emails = users.map(email => email.email)
 console.log(emails);
-//problem four
 
+//problem four
+const experience = users.reduce((years, year) => years + year.yearsOfExperience, 0);
+console.log(experience);
+let average = experience / users.length
+console.log(average);
+
+//problem 5
+const email = emails.reduce((mail, address) => {
+    if (address.length > mail.length) {
+       return address
+    }else {
+       return mail
+    }
+})
+console.log(email);
+
+//problem six
+const instructors = users.reduce((instructor, names) => instructor + ', ' + names.name, 'Your instructors are:')
+console.log(instructors);
 
 //bonus
 const unique = (arrayOfLang, obj) => {
