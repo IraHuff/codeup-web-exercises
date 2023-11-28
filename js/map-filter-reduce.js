@@ -64,7 +64,7 @@ const email = emails.reduce((mail, address) => {
 console.log(email);
 
 //problem six
-const instructors = users.reduce((instructor, names) => instructor + ', ' + names.name, 'Your instructors are:')
+const instructors = users.reduce((instructor, names) => instructor + names.name + ', ', 'Your instructors are: ')
 console.log(instructors);
 
 //bonus
