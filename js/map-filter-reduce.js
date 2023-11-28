@@ -1,5 +1,5 @@
-"use strict"
-
+"use strict";
+(() =>{
 const users = [
     {
         id: 1,
@@ -75,5 +75,6 @@ const unique = (arrayOfLang, obj) => {
     }
     return arrayOfLang;
 }
-const uniqeLang = users.reduce(unique, [])
-console.log(uniqeLang);
+const uniqueLang = users.reduce(unique, [])
+console.log(uniqueLang);
+})()
