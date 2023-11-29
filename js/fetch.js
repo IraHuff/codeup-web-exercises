@@ -7,8 +7,8 @@ const setting = {
 }
 
 const get = () => {
-    fetch(URL + "IraHuff/events/public", setting).then(res => res.json()).then(obj => {
-        // console.log(obj);
+    fetch(URL + "IraHuff/events/public" + "?per_page=10", setting).then(res => res.json()).then(obj => {
+        console.log(obj);
         const main = document.querySelector('ol');
         for (let item of obj) {
             const li = document.createElement('li')
@@ -26,6 +26,8 @@ const get = () => {
     })
 }
 document.querySelector('.get').addEventListener('click', get)
+
+//thank you lengthylyova
 
 const ghLogin = 'IraHuff';
 const token = GH_KEY;
@@ -97,7 +99,7 @@ async function fetchData(ghLogin, token) {
         }
     });
     let data = await response.json();
-    console.log(data)
+    // console.log(data)
     return data['data']['user']
 }
 
