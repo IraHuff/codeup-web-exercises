@@ -1,0 +1,45 @@
+* {
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --logoAccent: hsl(290, 10%, 34%);
+    --logoPrimary: hsl(292, 15%, 62%);
+    --headerText: hsl(285, 81%, 89%);
+}
+body{
+    padding: 0 4rem;
+    background-color: var(--logoPrimary);
+}
+header{
+    background-color: var(--logoAccent);
+    color: var(--headerText);
+    text-align: center;
+    padding: 3rem 0;
+    font-size: 4rem;
+}
+table {
+    margin: 5rem auto 0;
+}
+
+th, td {
+    padding: 1rem 5rem;
+    text-align: inherit;
+}
+
+
+.sub {
+    text-align: center;
+    font-size: 3rem;
+}
+.stock:nth-child(even){
+    background-color: var(--logoAccent);
+    color: hsl(294, 33%, 77%);
+}
+.stock:nth-child(odd){
+    background-color: hsl(308, 9%, 47%);
+    color: hsl(294, 33%, 85%);
+}
