@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="css/mapbox_maps_api.css">
+</head>
+<body>
+<div id='map'></div>
+<label for="zoom-level"></label>
+<select name="zoom-level" id="zoom-level" autocomplete="off">
+    <option value="choose">choose zoom</option>
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="15">15</option>
+</select>
+<label for="address">input address</label>
+<input type="text" name="address" id="address" placeholder="address">
+<button id="submit">submit</button>
+
+<script src="js/keys.js"></script>
+<script src="js/mapbox_maps_api.js"></script>
+</body>
+</html>
