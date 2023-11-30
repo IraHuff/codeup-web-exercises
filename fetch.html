@@ -1,29 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="css/fetch.css">
-</head>
 <body>
 <header class="header">
     <h1>See Ira's 10 most recent pushes to GitHub</h1>
 
     <button class="get">Click Here</button>
+    <button onclick="window.dialog.showModal();" class="get">show contribution graph</button>
 </header>
 <main>
     <h1>Newest to Oldest</h1>
     <ol>
 
     </ol>
-    <div class="main">
-        <h3>GitHub Contribution Graph Preview</h3>
-        <div id="gh">
+    <dialog id="dialog">
+        <div class="main">
+            <h3>GitHub Contribution Graph Preview</h3>
+            <div id="gh">
+            </div>
+            <h5>Made by <a href="https://github.com/lengthylyova">lengthylyova</a></h5>
         </div>
-        <h5>Made by <a href="https://github.com/lengthylyova">lengthylyova</a></h5>
-    </div>
+        <form method="dialog">
+            <button class="get">Close</button>
+        </form>
+    </dialog>
 </main>
 <script src="js/keys.js"></script>
 <script src="js/fetch.js"></script>
 </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/fetch.css">
+</head>
 </html>

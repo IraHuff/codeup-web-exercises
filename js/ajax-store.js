@@ -6,6 +6,7 @@
 //             its contents and fields
 //       HINT: You will want to target #insertProducts for your new HTML elements
 fetch("data/inventory.json").then(resp => resp.json()).then(data => {
+    console.log(data);
     const table = document.querySelector('#insertProducts')
     function renderTable(data) {
         let html = '<tr class="stock">';

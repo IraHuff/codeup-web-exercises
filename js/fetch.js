@@ -8,7 +8,7 @@ const setting = {
 
 const get = () => {
     fetch(URL + "IraHuff/events/public" + "?per_page=10", setting).then(res => res.json()).then(obj => {
-        console.log(obj);
+        // console.log(obj);
         const main = document.querySelector('ol');
         for (let item of obj) {
             const li = document.createElement('li')
