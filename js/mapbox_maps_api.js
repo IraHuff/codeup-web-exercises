@@ -85,3 +85,16 @@ zoom.addEventListener('change', () => {
     map.setZoom(zoomLevel);
 })
 // Add a text box for the user to enter an address that will use geocoding to center the map and place a marker on that location.
+let address = document.querySelector('#address')
+let addressButton = document.querySelector('#submit')
+
+addressButton.addEventListener('click', () => {
+    let userAddress = address.value
+    geocode(userAddress, MAP_KEY).then(result => {
+        let userMarker = new mapboxgl.Marker();
+        currentMarkers.push(userMarker);
+        userMarker.setLngLat(result).addTo(map);
+        map.setCenter(result);
+        map.setZoom(17);
+    })
+})
