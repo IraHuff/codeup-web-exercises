@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+}
+
+#map {
+    width: 80vw;
+    height: 80vh;
+    margin:  2rem auto 0 auto;
+}
+.marker {
+    background-image: url("../img/mapbox-pin.png");
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+header {
+    height: 5rem;
+    background-color: hsl(274, 12%, 34%);
+    color: hsl(236, 28%, 78%);
+}
+header > h1{
+    font-size: 3rem;
+    text-align: center;
+}
+body{
+    background-color: hsl(268, 20%, 25%);
+    color: hsl(236, 28%, 78%);
+    padding: 0 3rem;
+}
+
+.form{
+    display: flex;
+    justify-content: center;
+}
+button, select, label {
+    background-color: hsl(274, 12%, 34%);
+    color: hsl(236, 28%, 78%);
+    margin: .5rem 0 0 1rem;
+}
+input{
+    width: 35ch;
+}
