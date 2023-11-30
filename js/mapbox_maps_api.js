@@ -24,6 +24,24 @@ function geocode(search, token) {
             return data.features[0].center;
         });
 }
+// function to animate a marker
+let userMarker = new mapboxgl.Marker();
+let bouncing
+const animateMarker = timestamp => {
+    bouncing = map.getCenter()
+    // change radius based on current zoom level
+    let radius = (0.0000342857*Math.pow(map.getZoom(), 2)) - (0.00134229*map.getZoom()) + 0.01317;
+
+    // set marker coords based on radius
+        userMarker.setLngLat([
+        bouncing.lng,
+        (Math.abs(Math.sin(timestamp / 240) * radius)) + bouncing.lat
+    ]);
+    userMarker.addTo(map);
+    // repeat function per frame
+    requestAnimationFrame(animateMarker);
+}
+
 
 const currentMarkers =[]
 const resturants = [
@@ -91,10 +109,17 @@ let addressButton = document.querySelector('#submit')
 addressButton.addEventListener('click', () => {
     let userAddress = address.value
     geocode(userAddress, MAP_KEY).then(result => {
-        let userMarker = new mapboxgl.Marker();
         currentMarkers.push(userMarker);
         userMarker.setLngLat(result).addTo(map);
         map.setCenter(result);
         map.setZoom(17);
+        requestAnimationFrame(animateMarker);
     })
+})
+//Add button to hide all markers
+
+document.querySelector('#hide').addEventListener('click', () =>{
+    currentMarkers.forEach(point => {
+        point.remove();
+    });
 })
