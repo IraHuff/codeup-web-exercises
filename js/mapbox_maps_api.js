@@ -27,7 +27,10 @@ function geocode(search, token) {
 // function to animate a marker
 let userMarker = new mapboxgl.Marker();
 let bouncing
+let count
 const animateMarker = timestamp => {
+    count++
+    console.log(count);
     bouncing = map.getCenter()
     // change radius based on current zoom level
     let radius = (0.0000342857*Math.pow(map.getZoom(), 2)) - (0.00134229*map.getZoom()) + 0.01317;
@@ -38,9 +41,13 @@ const animateMarker = timestamp => {
         (Math.abs(Math.sin(timestamp / 240) * radius)) + bouncing.lat
     ]);
     userMarker.addTo(map);
-    // repeat function per frame
-    requestAnimationFrame(animateMarker);
+   // repeat function per frame
+
+    if (count < 201) {
+        requestAnimationFrame(animateMarker);
+    }
 }
+
 
 
 const currentMarkers =[]
@@ -113,7 +120,9 @@ addressButton.addEventListener('click', () => {
         userMarker.setLngLat(result).addTo(map);
         map.setCenter(result);
         map.setZoom(17);
+        count = 0;
         requestAnimationFrame(animateMarker);
+
     })
 })
 //Add button to hide all markers
