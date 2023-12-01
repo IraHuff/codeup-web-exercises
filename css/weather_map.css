@@ -8,7 +8,7 @@ body {
     background: hsl(239 78% 44%);
     background: radial-gradient(circle, hsl(239 78% 44% / 40%) 0%, hsl(239 78% 34% / 40%) 35%, hsl(239 78% 14% / 70%) 100%);
 }
-.head {
+.head h1{
     text-align: center;
     font-size: 1.75rem;
 }
