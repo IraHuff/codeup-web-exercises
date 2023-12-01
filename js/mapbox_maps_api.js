@@ -74,14 +74,14 @@ restaurants.forEach((item, i) => {
     let restaurantPopup = new mapboxgl.Popup().setHTML(`
                     <h3 class="popup">${item.name}</h3>
                     <p class="popup">${item.address}</p>
-                    <p class="popup">${item.foodType} Food</p>
+                    <p class="popup">${item.foodType}</p>
                     <p class="popup">${item.review}</p>
                     <img src="${item.img}" class="img">
                 `);
 
     geocode(item.address, MAP_KEY).then(result => {
         restaurantMarker.setLngLat(result).addTo(map).setPopup(restaurantPopup);
-        map.setZoom(11);
+        map.setZoom(16);
         i === 0 ? map.setCenter(result) : false;
     });
 });

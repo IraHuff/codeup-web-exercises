@@ -14,7 +14,7 @@
 .marker {
     background-image: url("../img/mapbox-pin.png");
     background-size: cover;
-    height: 50px;
+    height: 25px;
     aspect-ratio: 1/1;
     border-radius: 50%;
     cursor: pointer;
