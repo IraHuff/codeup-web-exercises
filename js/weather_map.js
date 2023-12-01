@@ -87,25 +87,26 @@
     //search bar
     let address = document.querySelector('#search')
     document.querySelector('.search').addEventListener('click', () => {
-    let userAddress = address.value
-    geocode(userAddress, MAP_KEY).then(result => {
-        marker.setLngLat(result).addTo(map);
-        map.setCenter(result);
-        map.setZoom(17);
-        let lngLat = marker.getLngLat();
-        lat = lngLat.lat;
-        lng = lngLat.lng;
-        let coords = {
-            lng,
-            lat
-        }
-        let insert = document.querySelector('.cards')
-        if (insert.firstElementChild !== null) {
-            while (insert.firstChild) {
-                insert.removeChild(insert.firstChild)
+        let userAddress = address.value
+        geocode(userAddress, MAP_KEY).then(result => {
+            marker.setLngLat(result).addTo(map);
+            // map.setCenter(result);
+            // map.setZoom(17);
+            let lngLat = marker.getLngLat();
+            map.flyTo({center: [lngLat.lng, lngLat.lat]})
+            lat = lngLat.lat;
+            lng = lngLat.lng;
+            let coords = {
+                lng,
+                lat
             }
-        }
-        locationName(coords, MAP_KEY)
-    })
+            let insert = document.querySelector('.cards')
+            if (insert.firstElementChild !== null) {
+                while (insert.firstChild) {
+                    insert.removeChild(insert.firstChild)
+                }
+            }
+            locationName(coords, MAP_KEY)
+        })
     })
 })()

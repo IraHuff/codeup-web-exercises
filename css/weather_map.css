@@ -4,50 +4,75 @@
     padding: 0;
     color: inherit;
 }
+
 body {
     background: hsl(239 78% 44%);
     background: radial-gradient(circle, hsl(239 78% 44% / 40%) 0%, hsl(239 78% 34% / 40%) 35%, hsl(239 78% 14% / 70%) 100%);
 }
-.head h1{
-    text-align: center;
-    font-size: 1.75rem;
+.head {
+    display: grid;
+    grid-template-columns: 1rem 20rem 5rem 1fr;
 }
+.head h1 {
+padding-left: 13%;
+    font-size: 3rem;
+}
+#search, .search{
+    background: hsl(239 78% 34% / 20%);
+    height: 2.5rem;
+    margin-left: 1rem;
+    margin-top: .5rem;
+    color: hsl(239 78% 34%);
+}
+::placeholder{
+    color: hsl(239 78% 34%);
+}
+.search:hover{
+    box-shadow: 0 4px 5px 5px hsl(0 0% 0% / 50%);
+}
+
 .container {
     padding-left: 2rem;
     padding-right: 2rem;
 }
+
 .cards {
     margin-top: .5rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: .5rem;
 }
-.city{
+
+.city {
     font-size: 2rem;
     font-weight: bold;
     grid-column-start: 1;
     grid-column-end: -1;
     text-align: center;
 }
-.card  {
+
+.card {
     padding: 2rem;
     width: 100%;
     background: hsl(239 78% 34% / 20%);
     border-radius: 10px;
-    box-shadow: 0 4px 30px 10px hsl(0 0% 0% / 50%);
+    box-shadow: 0 4px 10px 10px hsl(0 0% 0% / 50%);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid hsl(239 78% 34% / 83%);
 }
+
 .card img {
     margin: 0 0 0 4.5rem;
 }
+
 .card p {
     color: hsl(239 78% 34%);
     text-shadow: 0 0 .5em hsl(239 78% 34% / 40%);
     font-size: 1.5rem;
 }
-#map{
+
+#map {
     height: 50vh;
     width: 90vw;
     margin: 1rem auto 0 auto;
