@@ -1,11 +1,11 @@
 "use strict";
 
-(() => {
+// (() => {
 
     mapboxgl.accessToken = MAP_KEY;
     const map = new mapboxgl.Map({
         container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/streets-v12', // style URL
+        style: `mapbox://styles/mapbox/dark-v11`, // style URL
         center: [-114.0260845, 34.4196947], // starting position [lng, lat]
         zoom: 8, // starting zoom
     });
@@ -30,10 +30,8 @@
     let userMarker = new mapboxgl.Marker();
     let bouncing
     let count
-    let final
     const animateMarker = timestamp => {
         count++
-        console.log(count);
 
         // change radius based on current zoom level
         let radius = (0.0000003 * Math.pow(map.getZoom(), 2)) - (0.0000001 * map.getZoom()) + 0.0001;
@@ -79,7 +77,7 @@
             img: "../img/IDC.png"
         }
     ]
-    resturants.forEach((e, i) => {
+    resturants.forEach((item, i) => {
 
         // //creating element to add background image and other style to
         let el = document.createElement("div");
@@ -92,15 +90,15 @@
 
         // creating popup with restaurant information
         let restaurantPopup = new mapboxgl.Popup().setHTML(`
-                    <h3>${e.name}</h3>
-                    <p>${e.address}</p>
-                    <p>${e.foodType} Food</p>
-                    <p>${e.review}</p>
-                    <img src="${e.img}" height="50px" width="50px">
+                    <h3 class="popup">${item.name}</h3>
+                    <p class="popup">${item.address}</p>
+                    <p class="popup">${item.foodType} Food</p>
+                    <p class="popup">${item.review}</p>
+                    <img src="${item.img}" class="img">
                 `);
 
         // running geocode function to find lng and lat coordinates from address
-        geocode(e.address, MAP_KEY).then(result => {
+        geocode(item.address, MAP_KEY).then(result => {
             restaurantMarker.setLngLat(result).addTo(map).setPopup(restaurantPopup);
             map.setZoom(11);
             i === 0 ? map.setCenter(result) : false;
@@ -138,4 +136,4 @@
             point.remove();
         });
     })
-})()
+// })()

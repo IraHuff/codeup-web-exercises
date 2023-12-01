@@ -7,15 +7,15 @@
 
 #map {
     width: 80vw;
-    height: 80vh;
+    height: 70vh;
     margin: 2rem auto 0 auto;
 }
 
 .marker {
     background-image: url("../img/mapbox-pin.png");
     background-size: cover;
-    width: 50px;
     height: 50px;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -42,12 +42,32 @@ body {
     justify-content: center;
 }
 
-button, select, label {
+button, select, input{
     background-color: hsl(274, 12%, 34%);
     color: hsl(236, 28%, 78%);
-    margin: .5rem 0 0 1rem;
-}
+    margin-top: 1rem;
 
+}
+label {
+    margin-top: 1rem;
+    margin-right: .25rem;
+}
 input {
     width: 35ch;
+    margin-right: .25rem;
+}
+select  {
+    margin-right: 1rem;
+}
+
+#hide {
+    margin-left: 1rem;
+}
+
+.img{
+    height: 80px;
+}
+
+.popup{
+    color: hsl(0 0% 0%)
 }
