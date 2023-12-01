@@ -71,3 +71,7 @@ select  {
 .popup{
     color: hsl(0 0% 0%)
 }
+
+button:hover, select:hover, input:hover{
+    box-shadow: hsl(0 0% 100% / 50%) 0 0 5px 5px;
+}
