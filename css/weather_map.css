@@ -11,20 +11,25 @@ body {
 }
 .head {
     display: grid;
-    grid-template-columns: 1rem 20rem 5rem 1fr;
+    grid-template-columns: 20rem 1fr;
 }
 .head h1 {
 padding-left: 13%;
     font-size: 3rem;
 }
-#search, .search{
+#search {
     background: hsl(239 78% 34% / 20%);
     height: 2.5rem;
-    margin-left: 1rem;
-    margin-top: .5rem;
+    margin-left: 2rem;
+    margin-top: .75rem;
     color: hsl(239 78% 34%);
 }
 ::placeholder{
+    color: hsl(239 78% 34%);
+}
+.search {
+    background: hsl(239 78% 34% / 20%);
+    height: 2.5rem;
     color: hsl(239 78% 34%);
 }
 .search:hover{

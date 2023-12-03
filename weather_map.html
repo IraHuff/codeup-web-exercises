@@ -10,14 +10,23 @@
 <body>
 
 <header class="head">
+    <form id="citySearch">
     <label for="search"></label><input type="text" name="search" id="search" placeholder="input city, state">
     <button class="search">search</button>
+    </form>
     <h1>Five-Day Forecast</h1>
 </header>
 <div class="container">
     <section class="cards"></section>
     <section id="map"></section>
 </div>
+<dialog id="dialog" class="dialog">
+    <section class="modal">
+    </section>
+    <form method="dialog">
+        <button>Close</button>
+    </form>
+</dialog>
 <script src="js/mapbox_utilities.js"></script>
 <script src="js/keys.js"></script>
 <script src="js/weather_map.js"></script>
