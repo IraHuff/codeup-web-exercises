@@ -71,6 +71,7 @@ body {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid hsl(239 78% 34% / 83%);
+    cursor: pointer;
 }
 
 .card img {
@@ -133,6 +134,7 @@ dialog button {
     height: 2.5rem;
     width: 4rem;
     color: hsl(0 0% 90%);
+    cursor: pointer;
 }
 
 .hourlyCards {
