@@ -25,7 +25,9 @@
 
         let modal = document.querySelector('#dialog')
         let details = document.querySelector('.modal');
-        details.innerHTML = '';
+        let container = document.createElement('section')
+        container.classList.add('hourlyCards');
+        details.appendChild(container);
         let cards = card + 8;
         for (card; card < cards; card++) {
             let hourly = document.createElement('div')
@@ -34,13 +36,13 @@
             console.log(cards);
             let detailHours = detail.list[card];
             let time = new Date(detailHours.dt * 1000);
-            hourly.innerHTML = `<p class='time'>${time.getHours()}:00}</p>
+            hourly.innerHTML = `<p class='time'>${time.getHours()}:00</p>
                                 <p>Temp: ${detailHours.main.temp.toString().slice(0, 2)}℉</p>
                            <img src="http://openweathermap.org/img/w/${detailHours.weather[0].icon}.png">
                            <p>Weather: ${detailHours.weather[0].description}</p>`;
             console.log(hourly);
             console.log(detailHours);
-            details.appendChild(hourly);
+            container.appendChild(hourly)
         }
         modal.showModal()
     }
@@ -164,10 +166,12 @@
     });
 
 function cardDetails () {
+    let modual = document.querySelector('.modal');
     let detailClicks = document.querySelectorAll('.card');
     for (let detailClick of detailClicks) {
         detailClick.addEventListener('click', (e) => {
-            data = e.target.dataset.id;
+            data = parseInt(e.target.dataset.id);
+            modual.innerHTML = '';
             details(data, local);
         })
     }

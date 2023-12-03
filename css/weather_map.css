@@ -127,6 +127,24 @@ dialog::backdrop {
 dialog button {
     display: inline-block;
     margin: .75rem auto 0 45%;
+}
+.hourlyCards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: .5rem;
 
-
+}
+.hourly{
+    padding: .75rem;
+    background: hsl(0 0% 0% / 40%);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px hsl(0 0% 0% / 10%);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid hsl(0 0% 0% / 30%);
+    text-align: center;
+    color: hsl(0 0% 80%);
+}
+.time {
+    font-size: 1.5rem;
 }
