@@ -6,20 +6,39 @@
     let local
     let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
     let dayOfWeek = ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat']
+    let data
+
     function errorModal() {
-        let modal = document.querySelector('#dialog')
-        let data = document.querySelector('.modal')
-        data.innerHTML = ''
+        let modal = document.querySelector('#dialog');
+        let data = document.querySelector('.modal');
+        data.innerHTML = '';
         let error = document.createElement('div');
-        error.classList.add('error')
+        error.classList.add('error');
         error.innerHTML = "<h2>Invalid Search Term</h2>" +
             "<p>Please input city, state</p>";
-        data.appendChild(error)
-        modal.showModal()
+        data.appendChild(error);
+        modal.showModal();
     }
-    // function details() {
-    //     local.
-    // }
+
+    function details(card, detail) {
+        let modal = document.querySelector('#dialog')
+        let details = document.querySelector('.modal');
+        let hourly = document.createElement('div')
+        hourly.classList.add('hourly')
+        details.innerHTML = '';
+        for (card; card <= card + 7; card++) {
+            let detailHours = detail.list[card]
+            let time = new Date(detailHours.main.dt * 1000);
+            hourly.innerHTML = `<p class='time'>${detailHours.getHours()}:${detailHours.getMinutes()}</p>
+                                <p>Temp: ${hourly.main.temp.toString().slice(0, 2)}℉</p>
+                           <img src="http://openweathermap.org/img/w/${hourly.weather[0].icon}.png">
+                           <p>Weather: ${hourly.weather[0].description}</p>`;
+            details.appendChild(hourly);
+            modal.showModal()
+
+
+        }
+    }
 
     //function to get weather data based on lat lon
     function getData(x, y) {
@@ -37,19 +56,19 @@
 
     //function to populate city and weather cards
     function populateData(parse) {
-        let insert = document.querySelector('.cards')
+        let insert = document.querySelector('.cards');
         for (let i = 0; i < parse.list.length; i += 8) {
             let card = document.createElement('div');
             let selection = parse.list[i];
-            let day = new Date(selection.dt * 1000)
-            let weatherMonth = months[day.getMonth()]
-            let weatherDOW = dayOfWeek[day.getDay()]
+            let day = new Date(selection.dt * 1000);
+            let weatherMonth = months[day.getMonth()];
+            let weatherDOW = dayOfWeek[day.getDay()];
             card.innerHTML = `<p>Date: ${weatherDOW} ${weatherMonth} ${day.getDate()}</p>
                            <p>Temp: ${selection.main.temp.toString().slice(0, 2)}℉</p>
                            <img src="http://openweathermap.org/img/w/${selection.weather[0].icon}.png">
-                           <p>Weather: ${selection.weather[0].description}</p>`
+                           <p>Weather: ${selection.weather[0].description}</p>`;
             card.classList.add('card');
-            card.setAttribute("data-id", i)
+            card.setAttribute("data-id", i);
             insert.appendChild(card);
         }
     }
@@ -109,18 +128,19 @@
     //search bar
     let address = document.querySelector('#search');
     document.querySelector('#citySearch').addEventListener('submit', (e) => {
-        e.preventDefault()
+        e.preventDefault();
         let userAddress = address.value;
         if (address.value === '') {
-            errorModal()
-        };
+            errorModal();
+        }
         geocode(userAddress, MAP_KEY).then(result => {
             marker.setLngLat(result).addTo(map);
             // map.setCenter(result);
             // map.setZoom(17);
             let lngLat = marker.getLngLat();
-            map.flyTo({center: [lngLat.lng, lngLat.lat],
-            duration: 3000
+            map.flyTo({
+                center: [lngLat.lng, lngLat.lat],
+                duration: 3000
             });
             lat = lngLat.lat;
             lng = lngLat.lng;
@@ -138,6 +158,14 @@
         });
     });
 
+
+    let detailClicks = document.querySelector('.card');
+    for (let detailClick of detailClicks) {
+        detailClick.addEventListener('click', (e) => {
+            data = e.target.dataset.id;
+            details(data, local);
+        })
+    }
 
 
 })()
