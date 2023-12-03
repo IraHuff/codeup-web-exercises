@@ -16,7 +16,8 @@ body {
 }
 
 .head h1 {
-    padding-left: 18%;
+    margin-left: auto;
+    margin-right: 50%;
     font-size: 3rem;
 }
 
@@ -39,7 +40,7 @@ body {
 }
 
 .search:hover {
-    box-shadow: 0 4px 5px 5px hsl(0 0% 0% / 50%);
+    box-shadow: 0 4px 5px 5px hsl(0 0% 0% / 40%);
 }
 
 .container {
@@ -52,6 +53,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: .5rem;
+    text-align: center;
 }
 
 .city {
@@ -67,15 +69,11 @@ body {
     width: 100%;
     background: hsl(239 78% 34% / 20%);
     border-radius: 10px;
-    box-shadow: 0 4px 10px 10px hsl(0 0% 0% / 50%);
+    box-shadow: 0 4px 10px 10px hsl(0 0% 0% / 30%);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid hsl(239 78% 34% / 83%);
     cursor: pointer;
-}
-
-.card img {
-    margin: 0 0 0 4.5rem;
 }
 
 .card p {
@@ -141,7 +139,6 @@ dialog button {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: .5rem;
-
 }
 
 .hourly {
@@ -170,4 +167,28 @@ dialog button {
     grid-column-start: 1;
     grid-column-end: -1;
     text-align: center;
+}
+
+@media screen and (max-width: 1260px) {
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: .5rem;
+        margin: auto;
+    }
+    .card {
+        max-width: 40dvh;
+    }
+}
+
+@media screen and (max-width: 1060px){
+    .head {
+        display: grid;
+        grid-template-columns: .4fr 1fr;
+    }
+    .head h1 {
+        margin: 0;
+        font-size: 3rem;
+    }
+
 }
