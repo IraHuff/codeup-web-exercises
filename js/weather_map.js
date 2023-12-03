@@ -21,23 +21,28 @@
     }
 
     function details(card, detail) {
+        console.log(detail);
+
         let modal = document.querySelector('#dialog')
         let details = document.querySelector('.modal');
-        let hourly = document.createElement('div')
-        hourly.classList.add('hourly')
         details.innerHTML = '';
-        for (card; card <= card + 7; card++) {
-            let detailHours = detail.list[card]
-            let time = new Date(detailHours.main.dt * 1000);
-            hourly.innerHTML = `<p class='time'>${detailHours.getHours()}:${detailHours.getMinutes()}</p>
-                                <p>Temp: ${hourly.main.temp.toString().slice(0, 2)}℉</p>
-                           <img src="http://openweathermap.org/img/w/${hourly.weather[0].icon}.png">
-                           <p>Weather: ${hourly.weather[0].description}</p>`;
+        let cards = card + 8;
+        for (card; card < cards; card++) {
+            let hourly = document.createElement('div')
+            hourly.classList.add('hourly')
+            console.log(card);
+            console.log(cards);
+            let detailHours = detail.list[card];
+            let time = new Date(detailHours.dt * 1000);
+            hourly.innerHTML = `<p class='time'>${time.getHours()}:00}</p>
+                                <p>Temp: ${detailHours.main.temp.toString().slice(0, 2)}℉</p>
+                           <img src="http://openweathermap.org/img/w/${detailHours.weather[0].icon}.png">
+                           <p>Weather: ${detailHours.weather[0].description}</p>`;
+            console.log(hourly);
+            console.log(detailHours);
             details.appendChild(hourly);
-            modal.showModal()
-
-
         }
+        modal.showModal()
     }
 
     //function to get weather data based on lat lon
@@ -46,7 +51,6 @@
             .then(res => res.json())
             .then(data => {
                 local = data;
-                console.log(data);
                 populateData(data);
             })
             .catch((e) => {
@@ -71,6 +75,7 @@
             card.setAttribute("data-id", i);
             insert.appendChild(card);
         }
+        cardDetails()
     }
 
     function locationName(coordinates, apiKey) {
@@ -158,14 +163,14 @@
         });
     });
 
-
-    let detailClicks = document.querySelector('.card');
+function cardDetails () {
+    let detailClicks = document.querySelectorAll('.card');
     for (let detailClick of detailClicks) {
         detailClick.addEventListener('click', (e) => {
             data = e.target.dataset.id;
             details(data, local);
         })
     }
-
+}
 
 })()
