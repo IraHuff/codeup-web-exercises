@@ -1,13 +1,15 @@
 "use strict";
 (() => {
-
-    let lat
-    let lng
-    let local
+    // global variables
+    let lng = -92.48253417968736;
+    let lat = 39.73524785044066;
+    let local;
     let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
-    let dayOfWeek = ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat']
-    let data
+    let dayOfWeek = ['Sun', 'Mon', 'Tues', 'Wed', 'Thur', 'Fri', 'Sat'];
+    let data;
+    const init = {lng, lat};
 
+    //create error modal
     function errorModal() {
         let modal = document.querySelector('#dialog');
         let data = document.querySelector('.modal');
@@ -20,9 +22,8 @@
         modal.showModal();
     }
 
+    // create 'hourly' detail cards in modal
     function details(card, detail) {
-        console.log(detail);
-
         let modal = document.querySelector('#dialog')
         let details = document.querySelector('.modal');
         let container = document.createElement('section')
@@ -36,16 +37,12 @@
         for (card; card < cards; card++) {
             let hourly = document.createElement('div')
             hourly.classList.add('hourly')
-            console.log(card);
-            console.log(cards);
             detailHours = detail.list[card];
             time = new Date(detailHours.dt * 1000);
             hourly.innerHTML = `<p class='time'>${time.getHours()}:00</p>
                             <p class=".temp">Temp: ${detailHours.main.temp.toString().slice(0, 2)}℉</p>
                            <img src="http://openweathermap.org/img/w/${detailHours.weather[0].icon}.png">
                            <p class="temp">Weather: ${detailHours.weather[0].description}</p>`;
-            console.log(hourly);
-            console.log(detailHours);
             container.appendChild(hourly)
         }
         modal.showModal()
@@ -84,6 +81,20 @@
         cardDetails()
     }
 
+    //add event listener to each daily card
+    function cardDetails() {
+        let modual = document.querySelector('.modal');
+        let detailClicks = document.querySelectorAll('.card');
+        for (let detailClick of detailClicks) {
+            detailClick.addEventListener('click', (e) => {
+                data = parseInt(e.target.dataset.id);
+                modual.innerHTML = '';
+                details(data, local);
+            })
+        }
+    }
+
+    //get location from lat/lng
     function locationName(coordinates, apiKey) {
         reverseGeocode(coordinates, apiKey).then(result => {
             let insert = document.querySelector('.cards');
@@ -95,13 +106,7 @@
         })
     }
 
-    lng = -92.48253417968736;
-    lat = 39.73524785044066;
-    const init = {lng, lat};
-    locationName(init, MAP_KEY);
-
-
-// draw map
+    // draw map
     mapboxgl.accessToken = MAP_KEY;
     const map = new mapboxgl.Map({
         container: 'map', // container ID
@@ -110,13 +115,13 @@
         zoom: 8, // starting zoom
     });
 
-// Add zoom and rotation controls to the map.
+    // Add zoom and rotation controls to the map.
     map.addControl(new mapboxgl.NavigationControl());
 
-
-    //draw marker
+    //draw maker
     const marker = new mapboxgl.Marker({draggable: true}).setLngLat([-92.51, 39.74]).addTo(map);
 
+    // get coords when done dragging marker
     function onDragEnd() {
         const lngLat = marker.getLngLat();
         lat = lngLat.lat;
@@ -134,6 +139,7 @@
         locationName(coords, MAP_KEY);
     }
 
+    //listen to marker and call functon
     marker.on('dragend', onDragEnd);
 
     //search bar
@@ -146,8 +152,6 @@
         }
         geocode(userAddress, MAP_KEY).then(result => {
             marker.setLngLat(result).addTo(map);
-            // map.setCenter(result);
-            // map.setZoom(17);
             let lngLat = marker.getLngLat();
             map.flyTo({
                 center: [lngLat.lng, lngLat.lat],
@@ -169,16 +173,6 @@
         });
     });
 
-    function cardDetails() {
-        let modual = document.querySelector('.modal');
-        let detailClicks = document.querySelectorAll('.card');
-        for (let detailClick of detailClicks) {
-            detailClick.addEventListener('click', (e) => {
-                data = parseInt(e.target.dataset.id);
-                modual.innerHTML = '';
-                details(data, local);
-            })
-        }
-    }
-
+    //get current weather
+    locationName(init, MAP_KEY);
 })()
