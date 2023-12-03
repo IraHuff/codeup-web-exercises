@@ -90,6 +90,7 @@ body {
 }
 
 dialog {
+    padding: 1.5rem;
     position: relative;
     max-width: 80vw;
     margin: auto;
@@ -121,20 +122,27 @@ dialog {
 }
 
 dialog::backdrop {
-    background: linear-gradient(45deg, hsl(0 0% 0%/ 30%), hsl(239 78% 30% / 30%));
+    background: linear-gradient(45deg, hsl(0 0% 0%/ 50%), hsl(239 78% 30% / 50%));
+    backdrop-filter: blur(3px);
 }
 
 dialog button {
     display: inline-block;
-    margin: .75rem auto 0 45%;
+    margin: .75rem auto .25rem 90%;
+    background: hsl(239 78% 34% / 90%);
+    height: 2.5rem;
+    width: 4rem;
+    color: hsl(0 0% 90%);
 }
-.hourlyCards{
+
+.hourlyCards {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: .5rem;
 
 }
-.hourly{
+
+.hourly {
     padding: .75rem;
     background: hsl(0 0% 0% / 40%);
     border-radius: 16px;
@@ -145,6 +153,19 @@ dialog button {
     text-align: center;
     color: hsl(0 0% 80%);
 }
+
 .time {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+}
+
+.temp {
+    font-size: 1.25rem;
+}
+
+.detailDate {
+    font-size: 3rem;
+    color: hsl(230 50% 70%);
+    grid-column-start: 1;
+    grid-column-end: -1;
+    text-align: center;
 }

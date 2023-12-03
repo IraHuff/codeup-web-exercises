@@ -27,6 +27,10 @@
         let details = document.querySelector('.modal');
         let container = document.createElement('section')
         container.classList.add('hourlyCards');
+        let detailHours = detail.list[card];
+        let time = new Date(detailHours.dt * 1000);
+        let detailDate = `${dayOfWeek[time.getDay()]} ${months[time.getMonth()]} ${time.getDate()}`
+        container.innerHTML = `<h2 class="detailDate">${detailDate}</h2>`
         details.appendChild(container);
         let cards = card + 8;
         for (card; card < cards; card++) {
@@ -34,12 +38,12 @@
             hourly.classList.add('hourly')
             console.log(card);
             console.log(cards);
-            let detailHours = detail.list[card];
-            let time = new Date(detailHours.dt * 1000);
+            detailHours = detail.list[card];
+            time = new Date(detailHours.dt * 1000);
             hourly.innerHTML = `<p class='time'>${time.getHours()}:00</p>
-                                <p>Temp: ${detailHours.main.temp.toString().slice(0, 2)}℉</p>
+                            <p class=".temp">Temp: ${detailHours.main.temp.toString().slice(0, 2)}℉</p>
                            <img src="http://openweathermap.org/img/w/${detailHours.weather[0].icon}.png">
-                           <p>Weather: ${detailHours.weather[0].description}</p>`;
+                           <p class="temp">Weather: ${detailHours.weather[0].description}</p>`;
             console.log(hourly);
             console.log(detailHours);
             container.appendChild(hourly)
@@ -165,16 +169,16 @@
         });
     });
 
-function cardDetails () {
-    let modual = document.querySelector('.modal');
-    let detailClicks = document.querySelectorAll('.card');
-    for (let detailClick of detailClicks) {
-        detailClick.addEventListener('click', (e) => {
-            data = parseInt(e.target.dataset.id);
-            modual.innerHTML = '';
-            details(data, local);
-        })
+    function cardDetails() {
+        let modual = document.querySelector('.modal');
+        let detailClicks = document.querySelectorAll('.card');
+        for (let detailClick of detailClicks) {
+            detailClick.addEventListener('click', (e) => {
+                data = parseInt(e.target.dataset.id);
+                modual.innerHTML = '';
+                details(data, local);
+            })
+        }
     }
-}
 
 })()
