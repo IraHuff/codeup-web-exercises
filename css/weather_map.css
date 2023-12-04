@@ -199,6 +199,10 @@ dialog[open]{
     animation: fade-in 500ms forwards;
 }
 
+dialog[open]::backdrop{
+    animation: fade-in 500ms forwards;
+}
+
 @keyframes fade-in {
     0% {
         opacity: 0;
@@ -206,5 +210,4 @@ dialog[open]{
     100%{
         opacity: 100%;
     }
-
 }

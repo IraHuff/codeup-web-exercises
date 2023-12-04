@@ -9,7 +9,7 @@
     let data;
     const init = {lng, lat};
 
-
+    // take coords from search and drag and format for json query
     function latlngToCoords (latlng){
         lat = latlng.lat;
         lng = latlng.lng;
@@ -143,7 +143,7 @@
        latlngToCoords(lngLat)
     }
 
-    //listen to marker and call functon
+    //listen to marker and call function
     marker.on('dragend', onDragEnd);
 
     //search bar
