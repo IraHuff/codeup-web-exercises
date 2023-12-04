@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Five Day Forecast</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.0.0/mapbox-gl.css' rel='stylesheet'/>
+    <link rel="stylesheet" href="css/weather_map.css">
+</head>
+<body>
+
+<header class="head">
+    <form id="citySearch">
+        <label for="search"></label><input type="text" name="search" id="search" placeholder="input city, state">
+        <button class="search">search</button>
+    </form>
+    <h1>Five-Day Forecast</h1>
+</header>
+<div class="container">
+    <section class="cards"></section>
+    <section id="map"></section>
+</div>
+<dialog id="dialog" class="dialog">
+    <section class="modal">
+    </section>
+    <form method="dialog">
+        <button>Close</button>
+    </form>
+</dialog>
+<script src="js/mapbox_utilities.js"></script>
+<script src="js/keys.js"></script>
+<script src="js/weather_map.js"></script>
+</body>
+</html>

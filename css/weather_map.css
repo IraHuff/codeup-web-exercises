@@ -1,0 +1,210 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+}
+
+body {
+    background: hsl(239 78% 44%);
+    background: radial-gradient(circle, hsl(239 78% 44% / 40%) 0%, hsl(239 78% 34% / 40%) 35%, hsl(239 78% 14% / 70%) 100%);
+}
+
+.head {
+    display: grid;
+    grid-template-columns: 20rem 1fr;
+}
+
+.head h1 {
+    margin-left: auto;
+    margin-right: 48%;
+    font-size: 3rem;
+}
+
+#search {
+    background: hsl(239 78% 34% / 20%);
+    height: 2.5rem;
+    margin-left: 2rem;
+    margin-top: .75rem;
+    color: hsl(239 78% 80%);
+}
+
+::placeholder {
+    color: hsl(239 78% 34%);
+}
+
+.search {
+    background: hsl(239 78% 34% / 20%);
+    height: 2.5rem;
+    color: hsl(239 78% 34%);
+}
+
+.search:hover {
+    box-shadow: 0 4px 5px 5px hsl(0 0% 0% / 40%);
+}
+
+.container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.cards {
+    margin-top: .5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: .5rem;
+    text-align: center;
+}
+
+.city {
+    font-size: 2rem;
+    font-weight: bold;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    /*text-align: center;*/
+}
+
+.card {
+    padding: 2rem;
+    width: 100%;
+    background: hsl(239 78% 34% / 20%);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px 10px hsl(0 0% 0% / 30%);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid hsl(239 78% 34% / 83%);
+    cursor: pointer;
+}
+
+.card p {
+    color: hsl(239 78% 34%);
+    text-shadow: 0 0 .5em hsl(239 78% 34% / 40%);
+    font-size: 1.5rem;
+}
+
+#map {
+    height: 50vh;
+    width: 90vw;
+    margin: 1rem auto 0 auto;
+}
+
+dialog {
+    padding: 1.5rem;
+    position: relative;
+    max-width: 80vw;
+    margin: auto;
+    background: rgba(38, 0, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(38, 0, 255, 0.29);
+}
+
+.error {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.error h2 {
+    font-size: 2rem;
+    color: hsl(10 80% 50%);
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.error p {
+    color: hsl(0 0% 90%);
+    margin-top: .75rem;
+}
+
+dialog::backdrop {
+    background: linear-gradient(45deg, hsl(0 0% 0%/ 50%), hsl(239 78% 30% / 50%));
+    backdrop-filter: blur(3px);
+}
+
+dialog button {
+    display: inline-block;
+    margin: .75rem auto .25rem 90%;
+    background: hsl(239 78% 34% / 90%);
+    height: 2.5rem;
+    width: 4rem;
+    color: hsl(0 0% 90%);
+    cursor: pointer;
+}
+
+.hourlyCards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: .5rem;
+}
+
+.hourly {
+    padding: .75rem;
+    background: hsl(0 0% 0% / 40%);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px hsl(0 0% 0% / 10%);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid hsl(0 0% 0% / 30%);
+    text-align: center;
+    color: hsl(0 0% 80%);
+}
+
+.time {
+    font-size: 1.75rem;
+}
+
+.temp {
+    font-size: 1.25rem;
+}
+
+.detailDate {
+    font-size: 3rem;
+    color: hsl(230 50% 70%);
+    grid-column-start: 1;
+    grid-column-end: -1;
+    text-align: center;
+}
+
+@media screen and (max-width: 1260px) {
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: .5rem;
+        margin: auto;
+    }
+    .card {
+        max-width: 40dvh;
+    }
+}
+
+@media screen and (max-width: 1060px) {
+    .head {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-content: center;
+    }
+
+    .head h1 {
+        margin: 0;
+        font-size: 3rem;
+        text-align: center;
+    }
+}
+
+dialog[open]{
+    animation: fade-in 500ms forwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 100%;
+    }
+
+}

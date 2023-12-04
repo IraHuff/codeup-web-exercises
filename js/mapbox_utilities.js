@@ -36,11 +36,20 @@ function geocode(search, token) {
  *  })
  *
  */
+// function reverseGeocode(coordinates, token) {
+//     var baseUrl = 'https://api.mapbox.com';
+//     var endPoint = '/geocoding/v5/mapbox.places/';
+//     return fetch(`${baseUrl}${endPoint}${coordinates.lng},${coordinates.lat}.json?access_token=${token}`)
+//         .then( res => res.json() )
+//         // to get all the data from the request, comment out the following three lines...
+//         .then( data => data.features[0].place_name );
+// }
+
 function reverseGeocode(coordinates, token) {
     var baseUrl = 'https://api.mapbox.com';
     var endPoint = '/geocoding/v5/mapbox.places/';
     return fetch(`${baseUrl}${endPoint}${coordinates.lng},${coordinates.lat}.json?access_token=${token}`)
         .then( res => res.json() )
         // to get all the data from the request, comment out the following three lines...
-        .then( data => data.features[0].place_name );
+        .then( data => data.features[2].place_name );
 }
