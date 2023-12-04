@@ -9,6 +9,22 @@
     let data;
     const init = {lng, lat};
 
+
+    function latlngToCoords (latlng){
+        lat = latlng.lat;
+        lng = latlng.lng;
+        let coords = {
+            lng,
+            lat
+        };
+        let insert = document.querySelector('.cards');
+        if (insert.firstElementChild !== null) {
+            while (insert.firstChild) {
+                insert.removeChild(insert.firstChild);
+            }
+        }
+        locationName(coords, MAP_KEY);
+    }
     //create error modal
     function errorModal() {
         let modal = document.querySelector('#dialog');
@@ -124,19 +140,7 @@
     // get coords when done dragging marker
     function onDragEnd() {
         const lngLat = marker.getLngLat();
-        lat = lngLat.lat;
-        lng = lngLat.lng;
-        let coords = {
-            lng,
-            lat
-        };
-        let insert = document.querySelector('.cards');
-        if (insert.firstElementChild !== null) {
-            while (insert.firstChild) {
-                insert.removeChild(insert.firstChild);
-            }
-        }
-        locationName(coords, MAP_KEY);
+       latlngToCoords(lngLat)
     }
 
     //listen to marker and call functon
@@ -152,25 +156,14 @@
         }
         geocode(userAddress, MAP_KEY).then(result => {
             marker.setLngLat(result).addTo(map);
-            let lngLat = marker.getLngLat();
+            const lngLat = marker.getLngLat();
             map.flyTo({
                 center: [lngLat.lng, lngLat.lat],
                 duration: 3000
             });
-            lat = lngLat.lat;
-            lng = lngLat.lng;
-            let coords = {
-                lng,
-                lat
-            };
-            let insert = document.querySelector('.cards');
-            if (insert.firstElementChild !== null) {
-                while (insert.firstChild) {
-                    insert.removeChild(insert.firstChild);
-                }
-            }
-            locationName(coords, MAP_KEY);
+            latlngToCoords(lngLat)
         });
+
     });
 
     //get current weather
