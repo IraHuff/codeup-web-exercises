@@ -184,11 +184,13 @@ dialog button {
 @media screen and (max-width: 1060px){
     .head {
         display: grid;
-        grid-template-columns: .4fr 1fr;
+        grid-template-columns: 1fr;
+        align-content: center;
     }
     .head h1 {
         margin: 0;
         font-size: 3rem;
+        text-align: center;
     }
 
 }
