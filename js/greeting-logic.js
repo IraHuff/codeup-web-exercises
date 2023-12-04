@@ -1,5 +1,4 @@
-
-
+import randomNumber from "./number-utils.js";
 
 const greetings =
     [
@@ -24,3 +23,9 @@ const greetings =
         "How are you",
         "Pleased to meet you"
     ];
+
+function greeting() {
+        let num = greetings.length;
+        return greetings[randomNumber(0, num)];
+}
+export { greeting }
