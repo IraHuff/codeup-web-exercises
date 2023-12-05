@@ -24,4 +24,15 @@ form {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    background-size: 300%;
+    animation: move infinite alternate 10000ms;
+}
+@keyframes move {
+    0% {
+        background-position: left;
+    }
+    100% {
+        background-position: right;
+    }
+    
 }
