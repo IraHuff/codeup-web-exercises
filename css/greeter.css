@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+form {
+    margin-top: 3rem;
+    display: inline-block;
+    text-align: center;
+}
+.text {
+    font-family: 'Notable', sans-serif;
+    margin-top: 2rem;
+    font-size: 4rem;
+    text-align: center;
+    background: radial-gradient(circle, rgba(37,31,149,1) 21%, rgba(15,15,105,1) 46%, rgba(0,91,255,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}

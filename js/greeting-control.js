@@ -9,6 +9,6 @@ import {greeting} from "./greeting-logic.js";
         let greet = greeting();
         let insert = document.querySelector('#hello');
         insert.innerHTML = ''
-        insert.innerHTML = `<h2>${greet}  ${name.value}</h2>`
+        insert.innerHTML = `<h2 class="text">${greet}, ${name.value}</h2>`
     })
 })()
