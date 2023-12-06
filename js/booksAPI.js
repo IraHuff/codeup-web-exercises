@@ -39,11 +39,29 @@ export const getAllBooksAndAuthors = async () => {
     }
 }
 
+export const createBook = async (book) => {
+    try {
+        const url = 'http://localhost:3000/books';
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(book)
+        };
+        const response = await fetch(url, options);
+        const newBook = await response.json();
+        return newBook;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 export const updateBook = async (id, book) => {
     try {
         const url = `http://localhost:3000/books/${id}`;
         const options = {
-            method: 'PUT',
+            method: 'PUT',//replaces he whole id with just what is given
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -55,7 +73,7 @@ export const updateBook = async (id, book) => {
     } catch (error) {
         console.error(error);
     }
-}
+} //PATCH is another option? just update a specified line in the object.
 
 export const deleteBook = async (id) => {
     try {
